@@ -2,11 +2,30 @@
 public class Life {
 
 	/**
+	 * @param a 当前生命状态数组
+	 * @return wrappedArray 行和列都加2的包装数组
+	 */
+	public int[][] wrapArray(int[][] a){
+		int row = a.length;
+		int col = a[0].length;
+		int[][] wrappedArray = new int[row+2][col+2];
+		
+		return wrappedArray;
+	}
+	
+	/**
 	 * @param a 数组
 	 * @return 数组转换成字符串
 	 */
 	public String convertArray2Str(int[][] a) {
-		return "";
+		StringBuilder sb= new StringBuilder();
+		for(int i=0; i<a.length; i++) {
+			for(int j=0; j<a[0].length; j++) {
+				sb.append(a[i][j]);
+			}
+		}
+		
+		return sb.toString();
 	}
 	
 	/**

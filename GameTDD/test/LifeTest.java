@@ -3,6 +3,9 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.mockito.Mockito.*;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 public class LifeTest {
 
@@ -30,5 +33,15 @@ public class LifeTest {
 							 {1, 0, 1},
 							 {1, 0, 1}};
 		assertNotNull(life.convertArray2Str(lifeArray));
+	}
+	
+	@Test
+	public void testWrapArray() {
+		Life life = new Life();
+		int[][] lifeArray = {{1, 0, 1},
+							 {1, 0, 1},
+							 {1, 0, 1}};
+		int[][] array = life.wrapArray(lifeArray);
+		assertTrue(array.length-lifeArray.length==2);
 	}
 }
