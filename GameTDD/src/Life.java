@@ -6,7 +6,7 @@ public class Life {
 	 * @return 数组转换成字符串
 	 */
 	public String convertArray2Str(int[][] a) {
-		return " ";
+		return "";
 	}
 	
 	/**

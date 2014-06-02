@@ -3,9 +3,6 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 public class LifeTest {
 
