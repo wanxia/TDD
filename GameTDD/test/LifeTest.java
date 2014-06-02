@@ -8,9 +8,11 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class LifeTest {
+	private Life life;
 
 	@Before
 	public void setUp() throws Exception {
+		life = new Life();
 	}
 
 	@After
@@ -19,7 +21,6 @@ public class LifeTest {
 
 	@Test
 	public void testNextState() {
-		Life life = new Life();
 		boolean state1 = life.nextState(0, 3);
 		boolean state2 = life.nextState(1, 3);
 		assertTrue(state1);
@@ -28,7 +29,6 @@ public class LifeTest {
 
 	@Test
 	public void convertArray2Str() {
-		Life life = new Life();
 		int[][] lifeArray = {{1, 0, 1},
 							 {1, 0, 1},
 							 {1, 0, 1}};
@@ -37,7 +37,6 @@ public class LifeTest {
 	
 	@Test
 	public void testWrapArray() {
-		Life life = new Life();
 		int[][] lifeArray = {{1, 0, 1},
 							 {1, 0, 1},
 							 {1, 0, 1}};
@@ -47,11 +46,10 @@ public class LifeTest {
 	
 	@Test
 	public void testLifeEvolution() {
-		Life life = new Life();
 		int[][] lifeArray = {{1, 0, 1},
 							 {1, 0, 1},
 							 {1, 0, 1}};
 		int[][] array = life.lifeEvolution(lifeArray);
-		assertEquals(life.convertArray2Str(lifeArray), life.convertArray2Str(array));
+		assertEquals("000101000", life.convertArray2Str(array));
 	}
 }

@@ -7,6 +7,22 @@ public class Life {
 	 * @return a 下一生命状态数组
 	 */
 	public int[][] lifeEvolution(int[][] a) {
+		Life life = new Life();
+		int[][] wrappedArray = life.wrapArray(a);
+		
+		int row = a.length;
+		int col = a[0].length;
+		int neighborCount = 0;
+		
+		for(int i=1; i<=row; i++) {
+			for(int j=1; j<=col; j++) {
+				
+				neighborCount = wrappedArray[i-1][j-1] + wrappedArray[i-1][j] + wrappedArray[i-1][j+1]
+							   + wrappedArray[i][j-1] + wrappedArray[i][j+1] 
+							   + wrappedArray[i+1][j-1] + wrappedArray[i+1][j] + wrappedArray[i+1][j+1];
+				a[i-1][j-1] = life.nextState(wrappedArray[i][j], neighborCount)? 1 : 0;
+			}
+		}
 		
 		return a;
 	}
