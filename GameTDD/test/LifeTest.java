@@ -44,4 +44,14 @@ public class LifeTest {
 		int[][] array = life.wrapArray(lifeArray);
 		assertTrue(array.length-lifeArray.length==2);
 	}
+	
+	@Test
+	public void testLifeEvolution() {
+		Life life = new Life();
+		int[][] lifeArray = {{1, 0, 1},
+							 {1, 0, 1},
+							 {1, 0, 1}};
+		int[][] array = life.lifeEvolution(lifeArray);
+		assertEquals(life.convertArray2Str(lifeArray), life.convertArray2Str(array));
+	}
 }

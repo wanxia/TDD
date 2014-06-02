@@ -2,6 +2,17 @@
 public class Life {
 
 	/**
+	 * @author 
+	 * @param a 当前生命状态数组
+	 * @return a 下一生命状态数组
+	 */
+	public int[][] lifeEvolution(int[][] a) {
+		
+		return a;
+	}
+	
+	/**
+	 * @author 
 	 * @param a 当前生命状态数组
 	 * @return wrappedArray 行和列都加2的包装数组
 	 */
@@ -9,6 +20,12 @@ public class Life {
 		int row = a.length;
 		int col = a[0].length;
 		int[][] wrappedArray = new int[row+2][col+2];
+		
+		for(int i=1; i<=row; i++) {
+			for(int j=1; j<=col; j++) {
+				wrappedArray[i][j] = a[i-1][j-1];
+			}
+		}
 		
 		return wrappedArray;
 	}
