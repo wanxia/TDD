@@ -22,13 +22,4 @@ public class LifeTest {
 		assertTrue(state1);
 		assertTrue(state2);
 	}
-
-	@Test
-	public void convertArray2Str() {
-		Life life = new Life();
-		int[][] lifeArray = {{1, 0, 1},
-							 {1, 0, 1},
-							 {1, 0, 1}};
-		assertNotNull(life.convertArray2Str(lifeArray));
-	}
 }
